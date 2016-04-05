@@ -20,7 +20,7 @@ export default class ResolutionSingle extends Component {
 					readOnly={true}
 					checked={this.props.resolution.complete}
 					onClick={this.toggleChecked.bind(this)} />
-			{this.props.resolution.text}
+        {this.props.resolution.text}
 				{status}
 				<button className="btn-cancel"
 					onClick={this.deleteResolution.bind(this)}>
