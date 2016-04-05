@@ -18,8 +18,7 @@ export default class ResolutionsWrapper extends TrackerReact(React.Component) {
     }
   }
 
-  ComponentWillUnmount(){
-    //When this component unmounts no longer susbcribed to data
+  componentWillUnmount(){
     this.state.subscription.resolutions.stop();
   }
 
