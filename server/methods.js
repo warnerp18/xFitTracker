@@ -2,9 +2,12 @@ import { Meteor } from 'meteor/meteor';
 
 Meteor.methods({
   addResolution(resolution){
-  if(!Meteor.userId()){
-    throw new Meteor.Error('not-authorized');
-  }
+    //Uses the package called check..checks schema
+    check(resolution, String);
+
+    if(!Meteor.userId()){
+      throw new Meteor.Error('not-authorized');
+    }
     Resolutions.insert({
       text: resolution,
       complete: false,
@@ -16,9 +19,11 @@ Meteor.methods({
   //Toggles the completed checkbox on Form
   //resolution parameter is acutal resolution object
   toggleResolution(resolution){
-  if(Meteor.userId() !== resolution.user){
-    throw new Meteor.Error('not-authorized');
-  }
+    //Uses the package called check..checks schema
+    check(toggleResolution, Object)
+    if(Meteor.userId() !== resolution.user){
+      throw new Meteor.Error('not-authorized');
+    }
     //Resolutions is the database collection
     Resolutions.update(resolution._id, {
       //this will set the checkbox to the opposite of its current status
@@ -29,13 +34,11 @@ Meteor.methods({
 
   //Deletes the resolution-ResulutionSingle.jsx
   deleteResolution(resolution){
-  if(Meteor.userId() !== resolution.user){
-    throw new Meteor.Error('not-authorized');
-  }
+    //Uses the package called check..checks schema
+    check(resolution, Object);
+    if(Meteor.userId() !== resolution.user){
+      throw new Meteor.Error('not-authorized');
+    }
     Resolutions.remove(resolution._id);
   },
-});
-
-Meteor.startup(() => {
-  // code to run on server at startup
 });
