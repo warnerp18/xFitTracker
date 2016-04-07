@@ -36,7 +36,7 @@ export default class ResolutionsWrapper extends TrackerReact(React.Component) {
         transitionAppearTimeout={600}
         transitionLeaveTimeout={400}
         transitionAppear={true}>
-          <h1>XFit Tracker - {Session.get('test')}</h1>
+          <h1>XFit Tracker</h1>
           <ResolutionsForm />
           <ul >
             <ReactCSSTransitionGroup
