@@ -29,22 +29,28 @@ export default class ResolutionsWrapper extends TrackerReact(React.Component) {
 
   render() {
     return(
-      <div>
-        <h1>XFit Tracker - {Session.get('test')}</h1>
-        <ResolutionsForm />
-        <ul >
-        <ReactCSSTransitionGroup
-          component='ul'
-          className='resolutions'
-          transitionName='resolutionLoad'
-          transitionEnterTimeout={600}
-          transitionLeaveTimeout={400}>
-          {this.resolutions().map( (resolution)=>{
-            return <ResolutionSingle key={resolution._id} resolution={resolution} />
-          })}
-          </ReactCSSTransitionGroup>
-        </ul>
-      </div>
+      <ReactCSSTransitionGroup
+        component='div'
+        transitionName='route'
+        transitionEnterTimeout={600}
+        transitionAppearTimeout={600}
+        transitionLeaveTimeout={400}
+        transitionAppear={true}>
+          <h1>XFit Tracker - {Session.get('test')}</h1>
+          <ResolutionsForm />
+          <ul >
+            <ReactCSSTransitionGroup
+              component='ul'
+              className='resolutions'
+              transitionName='resolutionLoad'
+              transitionEnterTimeout={600}
+              transitionLeaveTimeout={400}>
+                {this.resolutions().map( (resolution)=>{
+                  return <ResolutionSingle key={resolution._id} resolution={resolution} />
+              })}
+            </ReactCSSTransitionGroup>
+          </ul>
+      </ReactCSSTransitionGroup>
     )
   }
 }

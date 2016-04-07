@@ -19,11 +19,11 @@ Meteor.methods({
   //Toggles the completed checkbox on Form
   //resolution parameter is acutal resolution object
   toggleResolution(resolution){
-    //Uses the package called check..checks schema
-    check(toggleResolution, Object)
+    //check(toggleResolution, Object);
     if(Meteor.userId() !== resolution.user){
       throw new Meteor.Error('not-authorized');
     }
+    console.log('test');
     //Resolutions is the database collection
     Resolutions.update(resolution._id, {
       //this will set the checkbox to the opposite of its current status
