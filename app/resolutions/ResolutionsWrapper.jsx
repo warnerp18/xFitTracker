@@ -30,6 +30,8 @@ export default class ResolutionsWrapper extends TrackerReact(React.Component) {
   }
 
   render() {
+    DocHead.setTitle('My Workouts for this month');
+
     return(
       <ReactCSSTransitionGroup
         component='div'
