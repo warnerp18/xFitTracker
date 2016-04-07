@@ -9,7 +9,8 @@
     "react": "^0.14.8",
     "react-addons-css-transition-group": "^0.14.8",
     "react-dom": "^0.14.8",
-    "react-mounter": "^1.1.0"
+    "react-mounter": "^1.1.0",
+    "react-router": "^2.0.1"
   },
   "version": "1.0.0",
   "main": "index.js",
