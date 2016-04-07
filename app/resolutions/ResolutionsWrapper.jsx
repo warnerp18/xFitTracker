@@ -5,7 +5,9 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ResolutionsForm from './ResolutionForm.jsx';
 import ResolutionSingle from './ResolutionSingle.jsx';
 
-Resolutions = new Mongo.Collection('resolutions');
+if(Meteor.isClient){
+  Resolutions = new Mongo.Collection('resolutions');
+}
 
 export default class ResolutionsWrapper extends TrackerReact(React.Component) {
 
