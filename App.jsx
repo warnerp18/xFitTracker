@@ -1,7 +1,5 @@
 import React from 'react';
 
-Wods = new Mongo.Collection('wods');
-
 export default class App extends React.Component {
 
   wodPage() {
