@@ -6,7 +6,6 @@ export default class WodForm extends Component {
 
   addWod(e) {
     e.preventDefault();
-    console.log(this);
     let wodName = this.refs.wodName.value.trim();
     let wodMovement = this.refs.wodMovement.refs.wodinput.value.trim();
     Meteor.call('addWod', wodName, wodMovement, ()=> {
