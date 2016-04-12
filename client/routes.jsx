@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {mount} from 'react-mounter';
 
-import App from '../App.jsx';
+import App from './App.jsx';
 import Home from './Home.jsx';
 import {MainLayout} from './layouts/MainLayout.jsx';
 import WodWrapper from './wods/WodWrapper.jsx';

@@ -5,6 +5,7 @@
     "start": "meteor run"
   },
   "dependencies": {
+    "client": "0.0.1",
     "meteor-node-stubs": "~0.2.0",
     "react": "^0.14.8",
     "react-addons-css-transition-group": "^0.14.8",
