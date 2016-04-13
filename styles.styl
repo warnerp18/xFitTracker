@@ -1,0 +1,100 @@
+*, *:before, *:after
+  box-sizing: border-box;
+
+.btn
+  display: inline-block;
+  padding: 9px 12px;
+  padding-top: 7px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: #5e5e5e;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #d1dade;
+  -webkit-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-image: none !important;
+  border: none;
+  text-shadow: none;
+  transition: all 0.12s linear 0s !important;
+  font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-decoration: none;
+
+.btn-teal
+  color: #fff;
+  background-color: #26a69a;
+  &:hover
+    background-color: #2bbbad;
+
+.btn-blue
+  color: #fff;
+  background-color: #0090d9;
+  &:hover
+    background-color: #1285d1;
+
+.waves-effect
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  z-index: 1;
+  will-change: opacity, transform;
+  transition: all .3s ease-out;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  &:hover
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+
+.or
+  position: relative;
+  float: left;
+  width: .3em;
+  height: 1.3em;
+  z-index: 3;
+  font-size: 12px;
+  &:before
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: 'or';
+    background-color: white;
+    margin-top: -.1em;
+    margin-left: -.9em;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.55;
+    color: #000;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 500px;
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+  &:after
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: ' ';
+    width: .3em;
+    height: 2.84em;
+    background-color: rgba(0,0,0,0);
+    border-top: .6em solid white;
+    border-bottom: .6em solid white;
+
+.or-lg
+  height: 1.2em;
+  font-size: 13px;
+.float-left
+  float: left;

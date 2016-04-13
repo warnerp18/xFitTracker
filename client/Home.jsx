@@ -6,9 +6,13 @@ export default class Home extends Component {
       <div>
         <h1>XFit Tracker</h1>
         <h3>Select what you're recording</h3>
-        <a href='/wodform'>Wod</a>
-        <br />
-        <a href='/skill-lift-form'>Skill/Lift</a>
+        <section>
+          <a href='/wodform' className='btn btn-teal wave-effect float-left'>Add A New Wod</a>
+        <div className='or or-lg'>
+
+        </div>
+          <a href='/skill-lift-form' className='btn btn-blue float-left'>Add a New Skill/Lift</a>
+          </section>
       </div>
     )
   }

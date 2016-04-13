@@ -1,5 +1,5 @@
 Meteor.methods({
-  addWod(wodName, wodMovement, girl){
+  addWod(wodName, wodMovement, girl, hero){
     //If not signed in User will not be allowed to insert to database
     if(!Meteor.userId()){
       throw new Meteor.Error('not authorized')
@@ -8,6 +8,7 @@ Meteor.methods({
       wodname: wodName,
       wodmovement: wodMovement,
       girl: girl,
+      hero: hero,
       createdAt: new Date(),
       user: Meteor.userId(),
     });

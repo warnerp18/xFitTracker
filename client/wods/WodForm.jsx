@@ -9,10 +9,12 @@ export default class WodForm extends Component {
     let wodName = this.refs.wodName.value.trim();
     let wodMovement = this.refs.wodMovement.refs.wodinput.value.trim();
     let girl = this.refs.girl.checked;
-    Meteor.call('addWod', wodName, wodMovement, girl, ()=> {
+    let hero = this.refs.hero.checked;
+    Meteor.call('addWod', wodName, wodMovement, girl, hero, ()=> {
       this.refs.wodName.value='';
       this.refs.wodMovement.refs.wodinput.value='';
       this.refs.girl.checked = false;
+      this.refs.hero.checked=false;
     });
   }
 
@@ -32,7 +34,11 @@ export default class WodForm extends Component {
           <input
             type='checkbox'
             ref='girl'
-            checked={this.props.checked}/>Is this one of the girls?
+            checked={this.props.checked}/>Is this one of the 'Girls'?
+          <input
+            type='checkbox'
+            ref='hero'
+            checked={this.props.checked}/>Is a Hero Wod?
         </section>
         <input
           type='text'
