@@ -24,13 +24,12 @@ export default class WodWrapper extends TrackerReact(React.Component) {
   }
 
   render() {
-    let wodResults = this.wods();
     return(
       <div>
         <WodForm />
         <ul>
           {this.wods().map( (wod)=>{
-            return <SingleWodResult wod={wod} />
+            return <SingleWodResult key={wod._id} wod={wod} />
           })}
         </ul>
       </div>
