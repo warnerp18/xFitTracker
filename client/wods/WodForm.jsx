@@ -4,6 +4,12 @@ import SingleWodInput from './SingleWodInput.jsx';
 
 export default class WodForm extends Component {
 
+  constructor(props){
+    super(props);
+    this.state= {
+      movements: [null]
+    }
+  }
   addWod(e) {
     e.preventDefault();
     let wodName = this.refs.wodName.value.trim();
@@ -17,16 +23,14 @@ export default class WodForm extends Component {
       this.refs.hero.checked=false;
     });
   }
-
   addField(e){
     e.preventDefault();
-    return(
-      <SingleWodInput />
-    )
+    const movements = this.state.movements;
+    movements.push(null)
+    this.setState({movements})
   }
 
   render() {
-    console.log(this.p);
     return (
       <form>
         <p>Enter the Wod Name or Rep/Time Scheme</p>
@@ -44,8 +48,14 @@ export default class WodForm extends Component {
           type='text'
           ref='wodName'
           placeholder='Wod Name' />
-          <SingleWodInput ref='wodMovement'/>
+          {this.state.movements.map(function(movement, index){
+             return <SingleWodInput key={index} />
+          })}
+
         <button onClick={this.addField.bind(this)}>Add Movement</button><br />
+
+
+
         <button type='submit' onClick={this.addWod.bind(this)}>Submit WOD</button>
       </form>
     )
