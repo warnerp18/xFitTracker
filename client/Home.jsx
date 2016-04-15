@@ -11,7 +11,7 @@ export default class Home extends Component {
         <div className='or or-lg'>
 
         </div>
-          <a href='/skill-lift-form' className='btn btn-blue float-left'>Add a New Skill/Lift</a>
+          <a href='/skillsform' className='btn btn-blue float-left'>Add a New Skill/Lift</a>
           </section>
       </div>
     )

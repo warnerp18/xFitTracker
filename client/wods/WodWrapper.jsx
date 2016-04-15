@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
 import WodForm from './WodForm.jsx';
 import SingleWodResult from './SingleWodResult.jsx';
 
-export default class WodWrapper extends TrackerReact(React.Component) {
+export default class WodWrapper extends TrackerReact(Component) {
   constructor() {
     super();
 

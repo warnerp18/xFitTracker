@@ -34,7 +34,7 @@ export default class WodForm extends Component {
           <input
             type='checkbox'
             ref='girl'
-            checked={this.props.checked}/>Is this one of the 'Girls'?
+            checked={this.props.checked}/><label>Is this one of the 'Girls'?</label>
           <input
             type='checkbox'
             ref='hero'

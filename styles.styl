@@ -1,6 +1,39 @@
 *, *:before, *:after
   box-sizing: border-box;
 
+html
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.87);
+
+h1
+  font-size: 4.2rem;
+  line-height: 110%;
+  margin: 2.1rem 0 1.68rem 0;
+
+h3
+  font-size: 2.92rem;
+  line-height: 110%;
+  margin: 1.46rem 0 1.168rem 0;
+
+a
+  color: #039be5;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  &:hover,
+  &:active
+    outline: 0;
+
+p
+  font-size: 15px;
+ul
+  list-style-type: none;
+  padding: 0;
+  li
+    list-style-type: none;
+
+
 .btn
   display: inline-block;
   padding: 9px 12px;
@@ -98,3 +131,21 @@
   font-size: 13px;
 .float-left
   float: left;
+
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #9e9e9e;
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0 0 15px 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: all 0.3s;
+  &:focus
+    border-bottom: 1px solid #26a69a;
+    box-shadow: 0 1px 0 0 #26a69a;

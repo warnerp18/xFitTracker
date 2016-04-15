@@ -5,6 +5,7 @@ import App from './App.jsx';
 import Home from './Home.jsx';
 import {MainLayout} from './layouts/MainLayout.jsx';
 import WodWrapper from './wods/WodWrapper.jsx';
+import SkillsWrapper from './skills/SkillsWrapper.jsx';
 
 
 const loggedOut = FlowRouter.group({
@@ -42,4 +43,15 @@ wodsRoutes.route('/wodform', {
   }
 });
 
+const SkillsRoutes = FlowRouter.group({
+  name: 'skills'
+});
 
+SkillsRoutes.route('/skillsform', {
+  name: 'skillform',
+  action() {
+    mount(MainLayout, {
+      content:(<SkillsWrapper />)
+    })
+  }
+});
