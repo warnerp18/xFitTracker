@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 
 import SingleWodInput from './SingleWodInput.jsx';
 
-import Checkbox from 'material-ui/lib/checkbox';
-import ActionFavorite from 'material-ui/lib/svg-icons/action/favorite';
-import ActionFavoriteBorder from 'material-ui/lib/svg-icons/action/favorite-border';
 import TextField from 'material-ui/lib/text-field';
 import RaisedButton from 'material-ui/lib/raised-button';
 
