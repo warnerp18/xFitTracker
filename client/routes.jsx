@@ -21,7 +21,6 @@ loggedOut.route('/login', {
   }
 });
 
-
 const wodsRoutes = FlowRouter.group({
   name: 'wods'
 });
