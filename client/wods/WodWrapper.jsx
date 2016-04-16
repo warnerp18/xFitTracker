@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
-import WodForm from './WodForm.jsx';
+import FormSelection from './FormSelection.jsx';
 import SingleWodResult from './SingleWodResult.jsx';
 
 export default class WodWrapper extends TrackerReact(Component) {
@@ -26,7 +26,7 @@ export default class WodWrapper extends TrackerReact(Component) {
   render() {
     return(
       <div>
-        <WodForm />
+        <FormSelection />
         <ul>
           {this.wods().map( (wod)=>{
             return <SingleWodResult key={wod._id} wod={wod} />

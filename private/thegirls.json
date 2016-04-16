@@ -1,0 +1,26 @@
+{
+  "theGirls": [
+    {
+      "name":"Amanda"{
+        "type":"AQAP",
+        "rep_scheme":"9, 7, 5",
+        "movements":[
+          "movement_1": "Muscle Up",
+          "movement_2": "Squat Snatch (135#/95#)",
+        ]
+      }
+    },
+    {
+      "name": “Angie”{
+        "type": "AQAP",
+        "rep_scheme": "For Time – Complete all reps of each exercise before moving to the next",
+        "movements":[
+          "movement_1": "100 Pull-ups",
+          "movement_2": "100 Push-ups",
+          "movement_3": "100 Sit-ups",
+          "movement_4": "100 Sqauts",
+        ]
+      }
+    },
+  ]
+}
