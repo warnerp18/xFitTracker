@@ -11,5 +11,17 @@ Meteor.methods({
       user: Meteor.userId(),
     });
   },
+  addSkill(SkillName, SkillResult, pr){
+    if(!Meteor.userId()){
+      throw new Meteor.Error('not authorized')
+    }
+    Skills.insert({
+      skillname: SkillName,
+      skillresult: SkillResult,
+      pr: pr,
+      createdAt: new Date(),
+      user: Meteor.userId(),
+    });
+  },
 });
 

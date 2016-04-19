@@ -13,7 +13,7 @@ export default class WodForm extends Component {
       movements: [null]
     }
   }
-  addWod(e) {
+  submitWod(e) {
     e.preventDefault();
     let WodName = this.refs.WodName.refs.input.value.trim();
     let wodMovement = this.refs.wodMovement.refs.WodMovement.refs.input.value.trim();
@@ -52,7 +52,7 @@ export default class WodForm extends Component {
           label="Submit WOD"
           primary={true}
           style ={{ margin: 12 }}
-          onClick={this.addWod.bind(this)}
+          onClick={this.submitWod.bind(this)}
         />
       </form>
     )
