@@ -17,6 +17,7 @@ export default class SkillsForm extends Component {
       this.refs.SkillName.refs.input.value = '';
       this.refs.SkillResult.refs.input.value = '';
       this.refs.pr.refs.enhancedSwitch.refs.checkbox.checked = false;
+      console.log(this.refs.pr.refs.enhancedSwitch.refs.checkbox.checked);
     });
   }
   render() {
