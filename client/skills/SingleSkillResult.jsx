@@ -6,13 +6,17 @@ import Colors from 'material-ui/lib/styles/colors';
 export default class SingleSkillResult extends Component {
 
   render() {
-    const pr = this.props.skill.pr ? <div>I PRed</div> : '';
+    const pr = this.props.skill.pr ? <span><img src="/images/pr-icon.png" className='icon pr' data-tip="PR"/></span> : '';
     return (
        <ListItem
-          primaryText={this.props.skill.skillname}
+          primaryText={
+            <p>
+            {this.props.skill.skillname}
+            {pr}
+            </p>
+          }
           secondaryText={
             <p>
-            {pr}
               {this.props.skill.skillresult}
             </p>
           }
