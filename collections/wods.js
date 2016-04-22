@@ -11,3 +11,5 @@ Wods.deny({
   update: () => true,
   remove: () => true
 })
+
+

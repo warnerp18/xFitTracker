@@ -25,7 +25,6 @@ export default class WodWrapper extends TrackerReact(Component) {
   }
 
   render() {
-    console.log(this);
     return(
       <div>
         <FormSelection />
