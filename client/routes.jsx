@@ -6,7 +6,7 @@ import Home from './Home.jsx';
 import {MainLayout} from './layouts/MainLayout.jsx';
 import WodWrapper from './wods/WodWrapper.jsx';
 import SkillsWrapper from './skills/SkillsWrapper.jsx';
-
+import SingleWodResult from './wods/SingleWodResult.jsx';
 
 const loggedOut = FlowRouter.group({
   name: 'loggedOut'
@@ -38,6 +38,13 @@ wodsRoutes.route('/wodform', {
   action() {
     mount(MainLayout, {
       content:(<WodWrapper />)
+    })
+  }
+});
+wodsRoutes.route('/wodform/:id', {
+  action(params) {
+    mount(MainLayout, {
+      content: (<SingleWodResult id={params.id} />)
     })
   }
 });
