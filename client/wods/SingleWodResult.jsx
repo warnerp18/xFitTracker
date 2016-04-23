@@ -18,7 +18,7 @@ export default class SingleWodResult extends Component {
         {isGirl}
         {isHero}
         </span>
-        <a href={'/wodform/${this.props.wod._id}'}>
+        <a href={`/wod/${this.props.wod._id}`}>
         {this.props.wod.wodmovement}
         </a>
         </p>

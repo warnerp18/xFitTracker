@@ -41,9 +41,8 @@ wodsRoutes.route('/wodform', {
     })
   }
 });
-wodsRoutes.route('/wodform/:id', {
-  action: function (params) {
-    console.log(params.id);
+wodsRoutes.route('/wod/:id', {
+  action (params) {
     mount(MainLayout, {
       content: (<WodDetail id={params.id} />)
     })
