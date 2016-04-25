@@ -7,6 +7,7 @@ import {MainLayout} from './layouts/MainLayout.jsx';
 import WodWrapper from './wods/WodWrapper.jsx';
 import SkillsWrapper from './skills/SkillsWrapper.jsx';
 import WodDetail from './wods/WodDetail.jsx';
+import SingleSkillDetail from './skills/SingleSkillDetail.jsx';
 
 const loggedOut = FlowRouter.group({
   name: 'loggedOut'
@@ -58,6 +59,14 @@ SkillsRoutes.route('/skillsform', {
   action() {
     mount(MainLayout, {
       content:(<SkillsWrapper />)
+    })
+  }
+});
+
+SkillsRoutes.route('skill/:id', {
+  action(params){
+    mount(MainLayout, {
+      content:(<SingleSkillDetail id={params.id}/>)
     })
   }
 });

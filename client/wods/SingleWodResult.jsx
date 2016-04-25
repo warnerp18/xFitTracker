@@ -8,8 +8,8 @@ export default class SingleWodResult extends Component {
   render() {
     const isGirl = this.props.wod.girl ? <span>Is one of the 'Girls'</span> : '';
     const isHero = this.props.wod.hero ? <span>Hero Wod</span> : '';
-    console.log(this.props.wod._id);
     return (
+        <a href={`/wod/${this.props.wod._id}`}>
       <ListItem
       primaryText={this.props.wod.wodname}
       secondaryText={
@@ -18,12 +18,11 @@ export default class SingleWodResult extends Component {
         {isGirl}
         {isHero}
         </span>
-        <a href={`/wod/${this.props.wod._id}`}>
         {this.props.wod.wodmovement}
-        </a>
         </p>
       }
       />
+      </a>
     )
   }
 }
