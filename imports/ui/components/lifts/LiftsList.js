@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import  { createContainer } from 'meteor/react-meteor-data';
 
-import { Lifts } from '../api/lifts.js';
+import { Lifts } from '/imports/api/lifts.js';
 
 import Lift from './Lift.js';
-import DeletionModal from './DeletionModal.js';
+import Modal from '/imports//ui/Modal.js';
 
 class LiftsList extends Component {
 
@@ -14,27 +14,28 @@ class LiftsList extends Component {
     this.state = {
       showPRS: false,
       showModal: false,
+      liftId: '',
     }
+
+    this.deleteLift = this.deleteLift.bind(this);
   }
 
   deleteLift(id) {
-    console.log(Lifts);
-    console.log(this.props.lifts._id);
-
     Lifts.remove(id);
+    this.setState({
+      showModal: false,
+    });
   }
   confirmDelete(id){
     let showModal = !this.state.showModal;
     this.setState({
       showModal: !this.state.showModal,
+      liftId: id,
     });
   }
 
-  toggleChecked(id, checked) {
-    //set the checked property to the opposite of its current value
-    Lifts.update( id , {
-      $set: { checked: !checked },
-    });
+  deletionConfirmed(id){
+    deleteLift(id)
   }
 
   togglePRs(){
@@ -46,7 +47,6 @@ class LiftsList extends Component {
   renderLifts () {
     let filterLifts = this.props.lifts;
     if (this.state.showPRS){
-      console.log(this.state.showPRS);
       filterLifts = filterLifts.filter((lift) => lift.liftPR);
     }
     return filterLifts.map((lift) => {
@@ -56,10 +56,9 @@ class LiftsList extends Component {
         id={lift._id}
         checked={lift.checked}
         pr={lift.liftPR}
-        //deleteLift={ () => this.deleteLift(lift._id)}
+        liftResult={lift.liftResult}
+        createdAt={lift.createdAt}
         confirmDelete={ () => this.confirmDelete(lift._id)}
-
-        toggleChecked={ this.toggleChecked }
       />
     });
   }
@@ -67,8 +66,13 @@ class LiftsList extends Component {
 
 
   render() {
-    console.log(this.props.lifts._id);
-    let modal = this.state.showModal ? <DeletionModal deleteLift={ (e) => { this.deleteLift(this.props.lifts._id); } }/> : false;
+    let modal = this.state.showModal ?
+        <Modal
+          action={ this.deleteLift }
+          confirmMessage={'Are you sure you want to Delete this lift?'}
+          targetId={this.state.liftId}
+        /> :
+        false;
     return (
       <div>
          <label className='show-prs'>

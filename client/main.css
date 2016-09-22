@@ -21,7 +21,6 @@ body {
   max-width: 600px;
   margin: 0 auto;
   min-height: 100%;
-  background: white;
 }
 
 header {
@@ -145,4 +144,98 @@ header .hide-completed {
   background: red;
   min-height: 72px;
   padding: 20px 0;
+}
+#login-buttons {
+  margin: 9px;
+}
+
+.list-group-item {
+  height: 55px;
+}
+.button-container {
+  display: block;
+  text-align: center;
+  position: relative;
+}
+.button-container span:first-child{
+    margin-right: 3px;
+}
+.orDivider {
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    width: 19px;
+    z-index: 9;
+    transform: translate(-68%, -50%);
+    text-align: center;
+}
+
+form {
+  padding: 15px;
+}
+.skillListContainer{
+   margin-top: 50px;
+   padding: 15px;
+}
+.prCheckboxContainer {
+  display: inline-block;
+}
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  outline: 0;
+  padding: 0 2rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: #fff;
+  background-color: #26a69a;
+  text-align: center;
+  letter-spacing: .5px;
+  transition: .2s ease-out;
+  cursor: pointer;
+}
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  z-index: 1;
+  will-change: opacity, transform;
+  transition: all .3s ease-out;
+}
+
+.blue.lighten-1 {
+  background-color: #42A5F5 !important;
 }

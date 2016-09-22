@@ -1,31 +1,24 @@
 import React, { Component, PropTypes } from 'react';
 import  { createContainer } from 'meteor/react-meteor-data';
 
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router';
+
 import { Lifts } from '../api/lifts.js';
 
 import Nav from './nav.js';
-import SkillsForm from './skillsform';
+import LiftsForm from './components/lifts/LiftsForm';
+import Home from './Home.js';
 //import Lift from './Lift.js';
-import LiftsList from './LiftsList.js';
+import LiftsList from './components/lifts/LiftsList.js';
 
 class App extends Component {
-
-  //renderLifts() {
-    //return this.props.lifts.map((lift) => (
-      //<Lift key={lift._id} lift={lift} />
-    //));
-  //}
-            //{this.renderLifts()}
 
   render() {
     return (
       <div>
         <Nav />
-        <SkillsForm />
         <div className='container'>
-        <LiftsList />
-          <ul>
-          </ul>
+          {this.props.children}
         </div>
       </div>
     )
