@@ -9,51 +9,45 @@ export default class LiftsForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
 
-    const liftName =  ReactDOM.findDOMNode(this.refs.liftName).value.trim();
+    const liftName =  this.refs.liftName.value.trim();
     const liftPR = this.refs.liftPR.checked;
     const liftResult = this.refs.liftResult.value.trim();
 
-    Lifts.insert({
-      text: liftName,
-      liftPR,
-      checked: false,
-      liftResult,
-      createdAt: new Date(),
-    });
+    Meteor.call('lifts.insert', liftName, liftPR, liftResult)
+    //Clear Form
     ReactDOM.findDOMNode(this.refs.liftName).value='';
     this.refs.liftResult.value = '';
     this.refs.liftPR.checked= false;
   }
   render() {
-    console.log('liftsform');
     return (
       <div>
-      <form className='new-lift' onSubmit={this.handleSubmit.bind(this)}>
-        <input
-          type='text'
-          ref='liftName'
-          placeholder='Lift Name'
-        />
-        <label>Lift PR?</label>
-        <input
-          type="checkbox"
-          ref="liftPR"
-          placeholder='Lift PR'
-        />
-        <input
-          type='liftResult'
-          ref='liftResult'
-          placeholder='Lift Result'
-        />
-        <input
-          type='submit'
-          ref='liftSubmit'
-          placeholder='Submit'
-          onSubmit={this.handleSubmit.bind(this)}
-        />
+        <form className='new-lift' onSubmit={this.handleSubmit.bind(this)}>
+          <input
+            type='text'
+            ref='liftName'
+            placeholder='Lift Name'
+          />
+          <label>Lift PR?</label>
+          <input
+            type="checkbox"
+            ref="liftPR"
+            placeholder='Lift PR'
+          />
+          <input
+            type='liftResult'
+            ref='liftResult'
+            placeholder='Lift Result'
+          />
+          <input
+            type='submit'
+            ref='liftSubmit'
+            placeholder='Submit'
+            onSubmit={this.handleSubmit.bind(this)}
+          />
 
-      </form>
-      <LiftList />
+        </form>
+        <LiftList />
       </div>
     )
   }

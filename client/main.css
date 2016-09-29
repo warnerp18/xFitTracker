@@ -239,3 +239,7 @@ form {
 .blue.lighten-1 {
   background-color: #42A5F5 !important;
 }
+
+.date {
+  float: right;
+}

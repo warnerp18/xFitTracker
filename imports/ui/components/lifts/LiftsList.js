@@ -21,12 +21,14 @@ class LiftsList extends Component {
   }
 
   deleteLift(id) {
-    Lifts.remove(id);
+    //removes lift form collection
+    Meteor.call('lifts.remove', id);
     this.setState({
       showModal: false,
     });
   }
   confirmDelete(id){
+    //creates modal asking to confirm deletion
     let showModal = !this.state.showModal;
     this.setState({
       showModal: !this.state.showModal,
@@ -34,11 +36,8 @@ class LiftsList extends Component {
     });
   }
 
-  deletionConfirmed(id){
-    deleteLift(id)
-  }
-
   togglePRs(){
+    //show or hide lifts that are not PRS
     this.setState({
       showPRS: !this.state.showPRS,
     });
@@ -83,7 +82,7 @@ class LiftsList extends Component {
              onClick={this.togglePRs.bind(this)}
           />
           Show PRs
-        </label>
+         </label>
         <ul>
           { this.renderLifts() }
         </ul>

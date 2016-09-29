@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import React, { Component, PropTypes } from 'react';
 import  { createContainer } from 'meteor/react-meteor-data';
 
@@ -8,7 +9,6 @@ import { Lifts } from '../api/lifts.js';
 import Nav from './nav.js';
 import LiftsForm from './components/lifts/LiftsForm';
 import Home from './Home.js';
-//import Lift from './Lift.js';
 import LiftsList from './components/lifts/LiftsList.js';
 
 class App extends Component {
@@ -25,12 +25,14 @@ class App extends Component {
   }
 }
 
-//App.propTypes = {
+App.propTypes = {
   //lifts: PropTypes.array.isRequired,
-//}
+  //currentUser: PropTypes.object,
+}
 
 export default createContainer(() => {
   return {
     lifts: Lifts.find({}, {sort: { createdAt: -1  } }).fetch(),
+    currentUser: Meteor.user(),
   };
 }, App);
