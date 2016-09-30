@@ -51,9 +51,8 @@ class LiftsList extends Component {
     return filterLifts.map((lift) => {
       return <Lift
         key={lift._id}
-        lift={lift.text}
+        liftName={lift.liftName}
         id={lift._id}
-        checked={lift.checked}
         pr={lift.liftPR}
         liftResult={lift.liftResult}
         createdAt={lift.createdAt}

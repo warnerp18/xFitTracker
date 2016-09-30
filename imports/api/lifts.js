@@ -4,9 +4,17 @@ import { check } from 'meteor/check';
 
 export const Lifts = new Mongo.Collection('lifts');
 
+if (Meteor.isServer) {
+  Meteor.publish('lifts', function listsPublication() {
+    return Lifts.find({owner: this.userId});
+  });
+}
+
 Meteor.methods({
   'lifts.insert'(liftName, liftPR, liftResult){
     check(liftName, String);
+    check(liftResult, String);
+    check(liftPR, Boolean);
 
     if( !this.userId ){
       throw new Meteor.Error('not-authorized');
@@ -15,7 +23,6 @@ Meteor.methods({
     Lifts.insert({
       liftName,
       liftPR,
-      checked: false,
       liftResult,
       createdAt: new Date(),
       owner: Meteor.userId(),
@@ -24,16 +31,15 @@ Meteor.methods({
   },
 
   'lifts.remove'(liftId){
-    console.log('liftid: ', liftId);
     check(liftId, String);
 
     Lifts.remove(liftId);
   },
 
-  'lifts.setChecked'(liftId, setChecked){
-     check(liftId, String);
-     check(setChecked, Boolean);
+  //'lifts.setChecked'(liftId, setChecked){
+     //check(liftId, String);
+     //check(setChecked, Boolean);
 
-     Lifts.update(liftId, { $set: {checked: setChecked } });
-  },
+     //Lifts.update(liftId, { $set: {checked: setChecked } });
+  //},
 });

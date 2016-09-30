@@ -8,7 +8,7 @@ export default class LiftsForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-
+    console.log(this.refs);
     const liftName =  this.refs.liftName.value.trim();
     const liftPR = this.refs.liftPR.checked;
     const liftResult = this.refs.liftResult.value.trim();
@@ -35,7 +35,7 @@ export default class LiftsForm extends React.Component {
             placeholder='Lift PR'
           />
           <input
-            type='liftResult'
+            type='text'
             ref='liftResult'
             placeholder='Lift Result'
           />

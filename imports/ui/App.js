@@ -31,6 +31,7 @@ App.propTypes = {
 }
 
 export default createContainer(() => {
+  Meteor.subscribe('lifts');
   return {
     lifts: Lifts.find({}, {sort: { createdAt: -1  } }).fetch(),
     currentUser: Meteor.user(),
