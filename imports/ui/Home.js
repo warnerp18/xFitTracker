@@ -8,10 +8,9 @@ export default class Home extends Component {
         <span>
           <Link to='/wodform' className='waves-effect waves-light btn'>Add New WOD</Link>
         </span>
-        <span>
+        <span className='orDivider'>
           <Link to='liftsform' className='btn waves-effect waves-light blue lighten-1'>Add New Lift</Link>
         </span>
-        <span className='orDivider'>or</span>
       </div>
     )
   }
