@@ -52,7 +52,9 @@ form {
 }
 
 .new-lift input,
-.new-lift checkbox{
+.new-lift checkbox,
+.newWod input,
+.newWod checkbox{
   box-sizing: border-box;
   padding: 10px 30px;
   background: transparent;
@@ -63,7 +65,8 @@ form {
   border: 1px solid black;
 }
 
-.new-lift input:focus{
+.new-lift input:focus,
+newWod input:focus{
   outline: 0;
 }
 
@@ -160,16 +163,22 @@ header .hide-completed {
 .button-container span:first-child{
     margin-right: 3px;
 }
-.orDivider {
-    background: white;
-    position: absolute;
-    border-radius: 50%;
-    left: 50%;
-    top: 50%;
-    width: 19px;
-    z-index: 9;
-    transform: translate(-68%, -50%);
-    text-align: center;
+.orDivider{
+  position: relative;
+}
+.orDivider:before {
+  content: 'OR';
+  background: white;
+  position: absolute;
+  border-radius: 20px;
+  left: -13px;
+  top: -2px;
+  z-index: 9;
+  text-align: center;
+  line-height: 11px;
+  padding: 6px 4px;
+  font-size: 10px;
+  font-weight: 900;
 }
 
 form {
