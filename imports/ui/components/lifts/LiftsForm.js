@@ -13,11 +13,16 @@ export default class LiftsForm extends React.Component {
     const liftPR = this.refs.liftPR.checked;
     const liftResult = this.refs.liftResult.value.trim();
 
-    Meteor.call('lifts.insert', liftName, liftPR, liftResult)
-    //Clear Form
-    ReactDOM.findDOMNode(this.refs.liftName).value='';
-    this.refs.liftResult.value = '';
-    this.refs.liftPR.checked= false;
+    Meteor.call('lifts.insert', liftName, liftPR, liftResult, (error, data)=> {
+      if(error) {
+        Bert.alert('You Must Login to Submit a Lift', 'danger' )
+      }  else {
+        //Clear Form
+        this.refs.liftName.value='';
+        this.refs.liftResult.value = '';
+        this.refs.liftPR.checked= false;
+      }
+    })
   }
   render() {
     return (
