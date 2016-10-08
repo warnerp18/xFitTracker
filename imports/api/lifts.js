@@ -4,6 +4,39 @@ import { check } from 'meteor/check';
 
 export const Lifts = new Mongo.Collection('lifts');
 
+var Schemas = {};
+
+Schemas.Lifts = new SimpleSchema({
+  liftName: {
+    type: String,
+    label: "Lift Name",
+    max: 200,
+  },
+  liftPR: {
+    type: Boolean,
+    label: "Lift PR?",
+    optional: true,
+  },
+  liftResult: {
+    type: String,
+    label: "Lift Result",
+    max: 200,
+  },
+  createdAt: {
+    type: Date,
+    label: 'Date this document was created',
+    optional: false,
+  },
+  owner: {
+    type: String,
+    label: 'The Meteor User ID',
+  },
+  username: {
+    type: String,
+  },
+});
+Lifts.attachSchema(Schemas.Lifts);
+
 if (Meteor.isServer) {
   Meteor.publish('lifts', function listsPublication() {
     return Lifts.find({owner: this.userId});
