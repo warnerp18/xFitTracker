@@ -8,7 +8,6 @@ export const Wods = new Mongo.Collection('wods');
 
 Meteor.methods({
   'wod.insert'(wodName, ...movements){
-  console.log(movements);
     Wods.insert({
       wodName,
       movements: movements,

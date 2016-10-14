@@ -13,7 +13,7 @@ class WodsList extends Component {
   }
   render() {
     return (
-      <div>
+      <div className='tempTextWhite'>
         <ul>
           { this.renderWodsList() }
         </ul>
