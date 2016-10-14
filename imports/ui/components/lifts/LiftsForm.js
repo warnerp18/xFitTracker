@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Lifts } from '/imports/api/lifts.js';
+import { Lifts } from '/imports/api/lifts/lifts.js';
 import LiftList from './LiftsList';
 
 export default class LiftsForm extends React.Component {

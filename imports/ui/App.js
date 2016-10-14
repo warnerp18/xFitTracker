@@ -4,7 +4,7 @@ import  { createContainer } from 'meteor/react-meteor-data';
 
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router';
 
-import { Lifts } from '../api/lifts.js';
+import { Lifts } from '../api/lifts/lifts.js';
 
 import Nav from './nav.js';
 import LiftsForm from './components/lifts/LiftsForm';
@@ -31,9 +31,9 @@ App.propTypes = {
 }
 
 export default createContainer(() => {
-  Meteor.subscribe('lifts');
+  //Meteor.subscribe('lifts');
   return {
-    lifts: Lifts.find({}, {sort: { createdAt: -1  } }).fetch(),
-    currentUser: Meteor.user(),
+    //lifts: Lifts.find({}, {sort: { createdAt: -1  } }).fetch(),
+    //currentUser: Meteor.user(),
   };
 }, App);

@@ -25,3 +25,4 @@ shell-server
 practicalmeteor:mocha
 themeteorchef:bert
 aldeed:collection2
+dburles:collection-helpers

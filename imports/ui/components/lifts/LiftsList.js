@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import  { createContainer } from 'meteor/react-meteor-data';
+import { createContainer } from 'meteor/react-meteor-data';
 
-import { Lifts } from '/imports/api/lifts.js';
+import { Lifts } from '/imports/api/lifts/lifts.js';
 
 import Lift from './Lift.js';
 import Modal from '/imports//ui/Modal.js';
@@ -92,6 +92,7 @@ class LiftsList extends Component {
 };
 
 export default createContainer(() => {
+  Meteor.subscribe('lifts');
   return {
     lifts: Lifts.find({}).fetch()
   }
