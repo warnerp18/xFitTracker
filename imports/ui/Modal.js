@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class Modal extends Component {
   render() {
-  console.log(this.props.targetId);
+    console.log(this);
     return (
       <div id="confirmDelete" className={this.props.modalclass}>
         <div className='container'>
@@ -13,7 +13,10 @@ export default class Modal extends Component {
             ref='yesDelete'>
               YES
           </button>
-          <button>NO</button>
+          <button
+            className='deleteNo'
+            onClick={ this.props.noAction }
+            >NO</button>
         </div>
       </div>
     )

@@ -130,22 +130,22 @@
   /*}*/
 /*}*/
 
-/*#confirmDelete{*/
-  /*position: absolute;*/
-  /*top: 0;*/
-  /*bottom: 0;*/
-  /*right: 0;*/
-  /*left: 0;*/
-  /*background: rgba(0,0,0,.3);*/
-/*}*/
-/*#confirmDelete .container {*/
-  /*max-width: 300px;*/
-  /*margin: 0 auto;*/
-  /*text-align: center;*/
-  /*background: red;*/
-  /*min-height: 72px;*/
-  /*padding: 20px 0;*/
-/*}*/
+#confirmDelete{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0,0,0,.3);
+}
+#confirmDelete .container {
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  background: red;
+  min-height: 72px;
+  padding: 20px 0;
+}
 /*#login-buttons {*/
   /*margin: 9px;*/
 /*}*/
@@ -257,4 +257,8 @@ button {
 
 .tempTextWhite {
    color: white;
+}
+
+.fullWidth {
+  width: 100%;
 }

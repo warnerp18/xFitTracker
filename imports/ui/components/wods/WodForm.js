@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router';
 import { createContainer } from 'meteor/react-meteor-data';
 import Fuse from 'fuse.js'
 
@@ -67,11 +68,7 @@ export default class WodForm extends Component {
   }
 
   searchWods(e){
-    //console.log(e.target.value)
-    //console.log(Wods.find({}).fetch());
     var fuse = new Fuse(Wods.find({}).fetch(), { keys: ["wodName"] })
-    //console.log(fuse)
-    //var fuse = new Fuse([{"wodName": "Phil"},], { keys:["wodName"] })
   }
 
   stopSubmission(e){
@@ -81,7 +78,7 @@ export default class WodForm extends Component {
   render(){
     return(
       <div>
-       <div className="background blurred">
+       <div>
           <div className="container">
             <h1>Add New WOD</h1>
             <div className="w-form">
@@ -122,8 +119,9 @@ export default class WodForm extends Component {
               </div>
             </div>
           </div>
-          <a className="back-arrow w-inline-block" href="add.html"><img src="images/left-arrow.png" width="27" />
-          </a>
+          <Link className="back-arrow w-inline-block" to="/">
+            <img src="images/left-arrow.png" width="27" />
+          </Link>
           <WodsList />
         </div>
       </div>

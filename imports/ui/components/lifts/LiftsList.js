@@ -27,6 +27,15 @@ class LiftsList extends Component {
       showModal: false,
     });
   }
+
+  cancelDelete(){
+    //On Alert when users doesn't want to delete lift
+    //removes alert and does nothing to "Lift"
+    this.setState({
+      showModal: false,
+    });
+  }
+
   confirmDelete(id){
     //creates modal asking to confirm deletion
     let showModal = !this.state.showModal;
@@ -67,12 +76,13 @@ class LiftsList extends Component {
     let modal = this.state.showModal ?
         <Modal
           action={ this.deleteLift }
+          noAction={ this.cancelDelete.bind(this) }
           confirmMessage={'Are you sure you want to Delete this lift?'}
           targetId={this.state.liftId}
         /> :
         false;
     return (
-      <div>
+      <div className='fullWidth'>
          <label className='show-prs'>
            <input
              type='checkbox'
@@ -82,9 +92,7 @@ class LiftsList extends Component {
           />
           Show PRs
          </label>
-        <ul>
           { this.renderLifts() }
-        </ul>
         { modal }
       </div>
     )

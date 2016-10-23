@@ -4,13 +4,22 @@ import { Link } from 'react-router';
 export default class Home extends Component {
   render() {
     return (
-      <div className='button-container'>
-        <span>
-          <Link to='/wodform' className='waves-effect waves-light btn'>Add New WOD</Link>
-        </span>
-        <span className='orDivider'>
-          <Link to='liftsform' className='btn waves-effect waves-light blue lighten-1'>Add New Lift</Link>
-        </span>
+
+      <div>
+        <Link
+          to='/wodform'
+          className="select-bg w-inline-block"
+        >
+          <h1>Add New WOD</h1>
+          <img src="images/left-arrow.png" width="27" />
+        </Link>
+        <Link
+          to='liftsform'
+          className="bottom select-bg w-inline-block"
+        >
+          <h1>Add New lift</h1>
+          <img src="images/right-arrow.png" width="27" />
+        </Link>
       </div>
     )
   }

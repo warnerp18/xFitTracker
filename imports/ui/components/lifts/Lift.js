@@ -9,15 +9,19 @@ export default class Lift extends Component {
     const month = createdAt.getMonth() +1;
     const year = createdAt.getYear();
     return (
-      <li>
+      <div className="pr-table-cell w-clearfix">
+        <div className="exercise">
+          <div>{liftPR} </div>
+          <div>{liftName}</div>
+          <div>{liftResult}</div>
+        </div>
+        <div className="date">
+          <div>{month}/{day}/{year}</div>
+        </div>
         <button className='delete' onClick={ confirmDelete }>
           &times;
         </button>
-        <span> {liftPR} </span>
-        <span className='text'>{liftName} - </span>
-        <span>{liftResult} </span>
-        <span className="date">{month}/{day}/{year}</span>
-      </li>
+      </div>
     )
   }
 }
