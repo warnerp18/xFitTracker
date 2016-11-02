@@ -6,7 +6,6 @@ import Fuse from 'fuse.js'
 
 import { Wods } from '../../../api/wods/wods.js';
 
-//import WodInput from './WodInput';
 import WodsList from './WodsList.js';
 
 
