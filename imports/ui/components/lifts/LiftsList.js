@@ -21,6 +21,7 @@ class LiftsList extends Component {
   }
 
   deleteLift(id) {
+    console.log(this);
     //removes lift form collection
     Meteor.call('lifts.remove', id);
     this.setState({
@@ -37,6 +38,7 @@ class LiftsList extends Component {
   }
 
   confirmDelete(id){
+    console.log(id);
     //creates modal asking to confirm deletion
     let showModal = !this.state.showModal;
     this.setState({

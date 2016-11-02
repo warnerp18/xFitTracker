@@ -6,7 +6,7 @@ import Fuse from 'fuse.js'
 
 import { Wods } from '../../../api/wods/wods.js';
 
-import WodInput from './WodInput';
+//import WodInput from './WodInput';
 import WodsList from './WodsList.js';
 
 
@@ -28,7 +28,6 @@ export default class WodForm extends Component {
       input: e.target.value,
     });
 
-    console.log('this.state (handleInputChange): ', this.state);
   }
 
   addInput(e){
@@ -48,7 +47,6 @@ export default class WodForm extends Component {
       this.refs.wodMovement.value = '';
     }
 
-    console.log('this.state: ', this.state);
   }
 
   submitWod(e){

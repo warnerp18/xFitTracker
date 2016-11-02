@@ -15,6 +15,9 @@ Meteor.methods({
       owner: Meteor.userId(),
       username: Meteor.user().username,
     });
+  },
+  'wod.remove'(wodId){
+    Wods.remove(wodId);
   }
 })
 
