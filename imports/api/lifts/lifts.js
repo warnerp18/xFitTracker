@@ -54,13 +54,18 @@ Meteor.methods({
     }
 
     Lifts.insert({
+      createdAt: new Date(),
       liftName,
       liftPR,
       liftResult,
-      createdAt: new Date(),
       owner: Meteor.userId(),
       username: Meteor.user().username,
     });
+  },
+
+  'lift.update'(liftId, liftName, liftPR, liftResult){
+    console.log('lift.update: liftId- ', liftId);
+    console.log(`${liftName} ${liftPR} ${liftResult}`)
   },
 
   'lifts.remove'(liftId){

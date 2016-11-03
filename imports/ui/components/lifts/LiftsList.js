@@ -15,18 +15,32 @@ class LiftsList extends Component {
       showPRS: false,
       showModal: false,
       liftId: '',
+      editable: false,
     }
 
     this.deleteLift = this.deleteLift.bind(this);
   }
 
   deleteLift(id) {
-    console.log(this);
     //removes lift form collection
     Meteor.call('lifts.remove', id);
     this.setState({
       showModal: false,
     });
+  }
+  updateLift(id, name, pr, result){
+    console.log(this);
+    this.setState({
+      id,
+    });
+    if (id = this.state.id ){
+      this.setState({
+        editable: !this.state.editable,
+      });
+        //console.log('updateLift: testing update Lift');
+        //console.log(name, ' ', pr, ' ', result, id);
+        //Meteor.call('lift.update', id, name, pr, result);
+    }
   }
 
   cancelDelete(){
@@ -38,7 +52,6 @@ class LiftsList extends Component {
   }
 
   confirmDelete(id){
-    console.log(id);
     //creates modal asking to confirm deletion
     let showModal = !this.state.showModal;
     this.setState({
@@ -59,7 +72,12 @@ class LiftsList extends Component {
     if (this.state.showPRS){
       filterLifts = filterLifts.filter((lift) => lift.liftPR);
     }
+    console.log(this.state.id);
+    if(this.state.editable){
+      //console.log(filterLifts)
+    }
     return filterLifts.map((lift) => {
+     const editOption =  lift._id == this.state.id ? this.state.editable : false;
       return <Lift
         key={lift._id}
         liftName={lift.liftName}
@@ -68,6 +86,8 @@ class LiftsList extends Component {
         liftResult={lift.liftResult}
         createdAt={lift.createdAt}
         confirmDelete={ () => this.confirmDelete(lift._id)}
+        updateLift={ () => this.updateLift(lift._id, lift.liftName, lift.liftResult, lift.liftPR)}
+        editable={editOption}
       />
     });
   }
@@ -102,7 +122,7 @@ class LiftsList extends Component {
 };
 
 export default createContainer(() => {
-  Meteor.subscribe('lifts');
+Meteor.subscribe('lifts');
   return {
     lifts: Lifts.find({}).fetch()
   }
