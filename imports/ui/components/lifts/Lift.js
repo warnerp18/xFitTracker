@@ -5,7 +5,7 @@ const Lift = (props) => {
   const liftPR = pr ?  "PR" : "";
   const day = createdAt.getDate();
   const month = createdAt.getMonth() +1;
-  const year = createdAt.getYear();
+  const year = parseInt(createdAt.getFullYear().toString().substr(2,2));
   return (
     <div className="pr-table-cell w-clearfix">
       <div className="exercise">
@@ -19,6 +19,7 @@ const Lift = (props) => {
       <button className='delete' onClick={ confirmDelete }>
         &times;
       </button>
+      <button>...</button>
     </div>
   )
 }
