@@ -12,10 +12,10 @@ h1 {
 }
 
 .background {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  /*display: -webkit-box;*/
+  /*display: -webkit-flex;*/
+  /*display: -ms-flexbox;*/
+  /*display: flex;*/
   min-height: 100vh;
   padding: 15px;
   -webkit-box-orient: vertical;
